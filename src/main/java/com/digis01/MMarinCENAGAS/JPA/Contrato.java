@@ -24,7 +24,7 @@ public class Contrato {
     
     @ManyToOne
     @JoinColumn(name = "idusuario")
-    public Usuario usuario;
+    public Usuario Usuario;
 
     public String getNombre() {
         return Nombre;
@@ -44,11 +44,11 @@ public class Contrato {
     }
 
     public Usuario getUsuario() {
-        return usuario;
+        return Usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Usuario usuaUsuariorio) {
+        this.Usuario = Usuario;
     }
 
 }
