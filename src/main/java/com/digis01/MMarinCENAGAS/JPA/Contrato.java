@@ -25,7 +25,31 @@ public class Contrato {
     @ManyToOne
     @JoinColumn(name = "idusuario")
     public Usuario Usuario;
+    
+    @ManyToOne
+    @JoinColumn(name = "idnodorecepcion")
+    public NodoRecepcion NodoRecepcion;
+    
+    @ManyToOne
+    @JoinColumn(name = "idnodoentrega")
+    public NodoEntrega NodoEntrega;
 
+    public NodoRecepcion getNodoRecepcion() {
+        return NodoRecepcion;
+    }
+
+    public void setNodoRecepcion(NodoRecepcion NodoRecepcion) {
+        this.NodoRecepcion = NodoRecepcion;
+    }
+
+    public NodoEntrega getNodoEntrega() {
+        return NodoEntrega;
+    }
+
+    public void setNodoEntrega(NodoEntrega NodoEntrega) {
+        this.NodoEntrega = NodoEntrega;
+    }
+    
     public String getNombre() {
         return Nombre;
     }

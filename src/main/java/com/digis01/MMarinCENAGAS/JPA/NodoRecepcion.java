@@ -6,20 +6,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-@Table(name = "ugtp_tbl_nodo")
+@Table(name = "ugtp_tbl_nodo_recepcion")
 @Entity
-public class Nodo {
+public class NodoRecepcion {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-     @Column(name = "idnodo")
+     @Column(name = "idnodorecepcion")
     private int IdNodo;
      @Column(name = "codigo")
      private String Codigo;
      @Column(name = "descripcion")
      private String Descripcion;
+     @JoinColumn(name = "idzonainyeccion")
+    @ManyToOne         
+     public Zona ZonaInyeccion;
 
+    public Zona getZonaInyeccion() {
+        return ZonaInyeccion;
+    }
+
+    public void setZonaInyeccion(Zona ZonaInyeccion) {
+        this.ZonaInyeccion = ZonaInyeccion;
+    }
+     
+     
     public int getIdNodo() {
         return IdNodo;
     }
